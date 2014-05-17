@@ -21,6 +21,7 @@
   <body>
 
   <div class="navbar navbar-default navbar-fixed-top">
+    
     <div class="container">
 
       <div class="navbar-header">
@@ -39,7 +40,7 @@
             <a href="{% url 'about' %}">About</a>
           </li>
           <li>
-            <a href="">Register</a>
+            <a href="">Register For More Information</a>
           </li>
           <li>
             <a href="{% url 'contact' %}">Contact</a>
@@ -54,11 +55,13 @@
   </div>
 
 
-  <div class="container">
+  <div class="main container">
 
 	{% block content %}{% endblock %}
 
-  <div class="footer">
+  </div>
+
+  <div class="footer container">
     <p>&copy; Gearhead Workspace 2014</p>
   </div>
 
