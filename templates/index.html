@@ -4,32 +4,68 @@
 {% block content %}
 
   <div class="jumbotron">
-    <h1><img src="{% static 'img/logo.png' %}"/></h1>
-    <p class="lead">Gearhead Workspace is a do-it-yourself auto repair shop for the urban gearhead who does not otherwise have the space or tools to work on his car.  Our goal is to create an atmosphere that is stimulating, comfortable, and collegial: everything that members might imagine their dream garage to be.</p>
-    <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
+    <h1>
+      <img src="{% static 'img/logo2.gif' %}" class="img-responsive" alt="Gearhead Workspace"/>
+    </h1>
+    <p/>
+    <div class="text-center">
+      <p>Do you love working on your car or motorcycle?</p>
+      <p>Do you wish you knew how?</p>
+      <p>Let Gearhead Workspace help you out!</p>
+      <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
+    </div>
   </div>
 
   <div class="row marketing">
-    <div class="col-lg-6">
-      <h4>Subheading</h4>
-      <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+    <p class="lead">
+      Gearhead Workspace offers the lifts & tools you need to perform work on your own car or motorcycle. Work by yourself, alongside a mechanic, or just watch our mechanic do the work for you. Unveiling the mysteries of autos is what Gearhead Workspace is in business to do.
+    </p>
 
-      <h4>Subheading</h4>
-      <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-      <h4>Subheading</h4>
-      <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+    <div class="well">
+      <p>Sign up for our newsletter for more information.</p>
+      <form role="form">
+        <div class="input-group">
+          <input type="email" class="form-control" id="emailSignup" placeholder="Enter email">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">Go!</button>
+          </span>
+        </div>
+      </form>
     </div>
+  </div>
 
-    <div class="col-lg-6">
-      <h4>Subheading</h4>
-      <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-      <h4>Subheading</h4>
-      <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-      <h4>Subheading</h4>
-      <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+  <div class="row">
+    <h4>Memberships</h4>
+    <p>
+      Want more than simply tools & equipment by the hour? Check out our two membership levels.
+    </p>
+    <div class="col-md-6 list-group">
+      <a href="#" class="list-group-item active">
+        <h4 class="list-group-item-heading">Premium Member</h4>
+      </a>
+      <a href="#" class="list-group-item">
+        <p class="list-group-item-text">
+          <ul>
+            <li>Free access to standard tools & bays up to 150 hours/year</li>
+            <li>Exclusive access to the member lounge</li>
+            <li>Invitations to member only events</li>
+          </ul>
+        </p>
+      </a>
+    </div>
+    <div class="col-md-6 list-group">
+      <a href="#" class="list-group-item active">
+        <h4 class="list-group-item-heading">Regular Member</h4>
+      </a>
+      <a href="#" class="list-group-item">
+        <p class="list-group-item-text">
+          <ul>
+            <li>Discounts on standard tools & bay rentals</li>
+            <li>Exclusive access to the member lounge</li>
+            <li>Invitations to member only events</li>
+          </ul>
+        </p>
+      </a>
     </div>
   </div>
 
