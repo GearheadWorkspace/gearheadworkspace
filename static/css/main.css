@@ -25,6 +25,10 @@
   }
 }
 
-li {
+.main li {
 	padding: 8px 0;
+}
+
+.founders h4 {
+	font-weight: bold;
 }
