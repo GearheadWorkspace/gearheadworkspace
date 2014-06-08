@@ -12,5 +12,7 @@ urlpatterns = patterns('',
 	url(r'^$', 'promo.views.index', name='home'),
 	url(r'^about/$', 'promo.views.about', name='about'),
 	url(r'^contact/$', 'promo.views.contact', name='contact'),
+	url(r'^register/$', 'promo.views.register', name='register'),
+	url(r'^membership/$', 'promo.views.membership', name='membership'),
     url(r'^admin/', include(admin.site.urls)),
 ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

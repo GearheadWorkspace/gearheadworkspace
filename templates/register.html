@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div class="row">
+  <h1 class="page-header">Register for more Information</h1>
+  <p class="lead">
+    Not ready to join, but want to keep an eye on our progress? Sign up for our newsletter and we will send you periodic updates.
+  </p>
+  <div class="well">
+    <p>Sign up for our newsletter for more information.</p>
+    <form role="form">
+      <div class="input-group">
+        <input type="email" class="form-control" id="emailSignup" placeholder="Enter email">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">Go!</button>
+        </span>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

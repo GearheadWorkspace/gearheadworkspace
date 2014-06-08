@@ -14,3 +14,13 @@ def about(request):
 def contact(request):
     context = {}
     return render(request, 'contact.html', context)
+
+
+def register(request):
+    context = {}
+    return render(request, 'register.html', context)
+
+
+def membership(request):
+    context = {}
+    return render(request, 'membership.html', context)
