@@ -14,5 +14,7 @@ urlpatterns = patterns('',
 	url(r'^contact/$', 'promo.views.contact', name='contact'),
 	url(r'^register/$', 'promo.views.register', name='register'),
 	url(r'^membership/$', 'promo.views.membership', name='membership'),
+	url(r'^payment/(?P<membership>premium|regular)/$', 'promo.views.payment', name='payment'),
+	url(r'^payment/success/$', 'promo.views.payment_success', name='payment_success'),
     url(r'^admin/', include(admin.site.urls)),
 ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
