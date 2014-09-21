@@ -1,3 +1,4 @@
+import os
 from django.conf import settings
 from django.shortcuts import render, redirect
 
@@ -77,7 +78,7 @@ def payment(request, membership):
         braintree.Environment.Sandbox,
         merchant_id="jw8gd3ccpk8x7sbq",
         public_key="56wc54324vdcmcrn",
-        private_key="061156d9810c55e5c801ce4e374669d4"
+        private_key=os.environ.get('BRAINTREE_PRIVATE_KEY')
     )
     # Get a client token
     token = braintree.ClientToken.generate()
