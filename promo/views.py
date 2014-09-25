@@ -1,8 +1,13 @@
 import os
+import json
 from django.conf import settings
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
+from django.views.decorators.csrf import csrf_exempt
 
 import braintree
+
+from promo.models import Subscriber
 
 
 # Create your views here.
@@ -62,7 +67,7 @@ def payment(request, membership):
 
             # Customer & Transaction Successful
             if txn_result.is_success:
-                return redirect('payment_success')
+                return redirect_for_email(email)
 
             # Handle the Transaction Error
             else:
@@ -95,9 +100,46 @@ def payment(request, membership):
     return render(request, 'payment.html', context)
 
 
-def payment_success(request):
-    return render(request, 'payment_success.html')
+def payment_success(request, show_mailinglist=''):
+    return render(request, 'payment_success.html', {'show_mailinglist': show_mailinglist})
 
 
+# API JUNK
+
+@csrf_exempt
+def subscriber(request):
+    """
+    POST API endpoint for compiling a list of newsletter subscribers
+    """
+    message = {}
+    status = 200
+    try:
+        email = request.POST.get('email', '').lower()
+        sub, created = Subscriber.objects.get_or_create(email=email)
+        message = {
+            'status': 'success',
+            'data': {
+                'email': sub.email,
+                'created': created
+            }
+        }
+
+    except Exception, e:
+        message = {'status': 'error', 'message': e.message}
+        status = 500
+
+    return HttpResponse(json.dumps(message), status=status)
 
 
+# HELPER JUNK
+
+def redirect_for_email(email):
+    """
+    Check if the submitted email address exists in the list of users we've
+    seen subscribe to the mailing list. If they have not yet subscribed, show
+    them the Mail Chimp subscription form.
+    """
+    if Subscriber.objects.filter(email=email).count() == 0:
+        return redirect('payment_success', show_mailinglist='mailinglist')
+    else:
+        return redirect('payment_success')
