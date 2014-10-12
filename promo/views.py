@@ -33,10 +33,11 @@ def membership(request):
 def payment(request, membership):
     # Initalize variables
     context = {}
-    errors = {}
+    errors = []
     amount = {
         'premium': settings.PREMIUM_MEMBERSHIP,
         'regular': settings.REGULAR_MEMBERSHIP,
+        'donation': request.POST.get("amount", 0)
     }
 
     # Handle form submission
@@ -47,7 +48,7 @@ def payment(request, membership):
         first_name = request.POST.get("first_name")
         last_name = request.POST.get("last_name")
         email = request.POST.get("email")
-        
+
         # Create a new customer record with Braintree
         cust_result = braintree.Customer.create({
             "first_name": first_name,
@@ -71,11 +72,11 @@ def payment(request, membership):
 
             # Handle the Transaction Error
             else:
-                errors.update(cust_result.errors.deep_errors)
+                _append_errors(errors, txn_result)
 
         # Handle Customer Creation Error
         else:
-            errors.update(cust_result.errors.deep_errors)
+            _append_errors(errors, cust_result)
 
 
     # Configure braintree
@@ -95,9 +96,17 @@ def payment(request, membership):
         'amount': amount[membership],
     })
     if errors:
-        context.update(errors)
+        context.update({'errors': errors})
 
     return render(request, 'payment.html', context)
+
+
+def _append_errors(errors, response_errors):
+    for error in response_errors.errors.deep_errors:
+        errors.append({
+            'code': error.code,
+            'message': error.message
+        })
 
 
 def payment_success(request, show_mailinglist=''):

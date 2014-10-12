@@ -16,11 +16,23 @@
 
 <div class="row">
 
+  {% if membership == 'premium' %}
+
   <h1 class="page-header">Submit payment</h1>
 
   <p class="lead">
     Thanks for becoming a founding member! This will help us establish initial interest and funding and you get a discount on your first year of membership.
   </p>
+
+  {% elif membership == 'donation' %}
+
+  <h1 class="page-header">Make a donation</h1>
+
+  <p class="lead">
+    Thank you for making a donation to help Gearhead Workspace get started!
+  </p>
+
+  {% endif %}
 
   <div class="list-group">
 
@@ -63,12 +75,13 @@
   </div>
 
   {% endif %}
-
   </div>
 
   {% if errors %}
   <div class="row">
-      <h2 class="page-header">There was a problem submitting your payment</h2>
+    <div class="alert alert-danger" role="alert">
+      There was a problem submitting your payment
+    </div>
       <p class="lead">
         Please contact us so we can investigate further:
       <a href="mailto:tim@gearheadworkspace.com">tim@gearheadworkspace.com</a>
@@ -99,6 +112,12 @@
     </div>
 
     <h3>Payment Information</h3>
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-addon">$</div>
+        <input class="form-control" type="text" name="amount" placeholder="100.00" pattern="^\\$?(([1-9](\\d*|\\d{0,2}(,\\d{3})*))|0)(\\.\\d{1,2})?$">
+      </div>
+    </div>
     <div id="dropin"></div>
 
     <button type="submit" class="btn btn-default">Submit Member & Payment</button>
