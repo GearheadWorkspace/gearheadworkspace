@@ -12,24 +12,20 @@
       <p>Do you love working on your car or motorcycle?</p>
       <p>Do you wish you knew how?</p>
       <p>Let Gearhead Workspace help you out!</p>
-      <p><a class="btn btn-lg btn-success" href="{% url 'membership' %}" role="button">Become a member today</a></p>
+      <p><a class="btn btn-lg btn-success" href="{% url 'membership' %}" role="button">Help us open!</a></p>
     </div>
   </div>
 
   <div class="row marketing">
     <p class="lead">
-      Gearhead Workspace will offer the lifts, tools, and training you need to perform work on your own car or motorcycle. Work by yourself, alongside a mechanic, or just watch our mechanic do the work for you. Unveiling the mysteries of autos is what Gearhead Workspace is in business to do.
+      Gearhead Workspace will offer the lifts, tools, and training you need to perform work on your own car or motorcycle. Work by yourself, alongside a mechanic, or just watch our mechanic do the work for you. We are here to provide you with the garage you have always dreamed of.
     </p>
   </div>
 
-  <div class="row">
-      {% include "partials/mailchimp.html" %}
-  </div>
-
-  <div class="row">
+    <div class="row">
     <h4>Memberships</h4>
     <p>
-      Want more than simply tools &amp; equipment by the hour? Check out our two membership levels which will be available soon as Founding Memberships. Sign up for our email list below to be notified when the Founding Memberships are available.
+      Want more than simply tools &amp; equipment by the hour? Check out our two membership levels which will be available soon as Founding Memberships. To thank our Founding Members, we are selling the founding memberships at 50% off the regular membership price! Sign up for our <a class="btn btn-lg btn-success" href="{% url 'membership' %}" role="button">email list</a> to be notified when the Founding Memberships are available.
     </p>
      {% include "partials/membership_options.html" %}
   </div>
