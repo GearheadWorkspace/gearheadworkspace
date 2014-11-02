@@ -36,3 +36,8 @@
 #mc_embed_signup label {
   padding: 6px !important;
 }
+
+.footer p {
+  display: inline;
+  padding: 20px 20px;
+}
