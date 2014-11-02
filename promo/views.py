@@ -102,10 +102,27 @@ def payment(request, membership):
 
 
 def _append_errors(errors, response_errors):
+    # It'd be great if this worked, but it doesn't. thanks braintree...
     for error in response_errors.errors.deep_errors:
         errors.append({
             'code': error.code,
             'message': error.message
+        })
+    # So we have to guess...
+    if response_errors.transaction.processor_response_text:
+        errors.append({
+            'code':'Payment Processor Error',
+            'message': response_errors.transaction.processor_response_text
+        })
+    if response_errors.transaction.processor_settlement_response_text:
+        errors.append({
+            'code':'Payment Processor Settlement Error',
+            'message': response_errors.transaction.processor_settlement_response_text
+        })
+    if response_errors.transaction.gateway_rejection_reason:
+        errors.append({
+            'code':'Payment Processor Gateway Error',
+            'message': response_errors.transaction.gateway_rejection_reason
         })
 
 
