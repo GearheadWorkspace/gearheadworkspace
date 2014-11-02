@@ -112,12 +112,18 @@
     </div>
 
     <h3>Payment Information</h3>
+
+  {% if membership == 'donation' %}
+
     <div class="form-group">
       <div class="input-group">
         <div class="input-group-addon">$</div>
         <input class="form-control" type="text" name="amount" placeholder="100.00" pattern="^\\$?(([1-9](\\d*|\\d{0,2}(,\\d{3})*))|0)(\\.\\d{1,2})?$">
       </div>
     </div>
+
+  {% endif %}
+
     <div id="dropin"></div>
 
     <button type="submit" class="btn btn-default">Submit Member & Payment</button>
