@@ -78,10 +78,15 @@ def payment(request, membership):
         else:
             _append_errors(errors, cust_result)
 
+    # Get the braintree environment
+    if os.environ.get('BRAINTREE_PRODUCTION', False):
+        env = braintree.Environment.Production
+    else:
+        env = braintree.Environment.Sandbox
 
     # Configure braintree
     braintree.Configuration.configure(
-        braintree.Environment.Sandbox,
+        env,
         merchant_id=os.environ.get('BRAINTREE_MERCHANT_ID'),
         public_key=os.environ.get('BRAINTREE_PUBLIC_KEY'),
         private_key=os.environ.get('BRAINTREE_PRIVATE_KEY')
