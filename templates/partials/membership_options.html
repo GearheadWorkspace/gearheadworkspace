@@ -1,6 +1,8 @@
 <div class="col-md-6 list-group">
   <a href="{% url 'membership' %}" class="list-group-item active">
-    <h4 class="list-group-item-heading">Premium Member</h4>
+    <h4 class="list-group-item-heading">
+      Premium Member: <span class="badge pull-right">${{ PREMIUM_MEMBERSHIP }}
+    </h4>
   </a>
   <a href="{% url 'membership' %}" class="list-group-item">
     <p class="list-group-item-text">
@@ -11,7 +13,7 @@
       </ul>
     </p>
   </a>
-  <a href="{% url 'membership' %}" class="list-group-item">
+  <a href="{% url 'payment' membership='premium' %}" class="list-group-item">
     <p class="list-group-item-text text-center">
       Join Now
     </p>
@@ -19,7 +21,9 @@
 </div>
 <div class="col-md-6 list-group">
   <a href="{% url 'membership' %}" class="list-group-item active">
-    <h4 class="list-group-item-heading">Regular Member</h4>
+    <h4 class="list-group-item-heading">
+      Regular Member: <span class="badge pull-right">${{ REGULAR_MEMBERSHIP }}</span>
+    </h4>
   </a>
   <a href="{% url 'membership' %}" class="list-group-item">
     <p class="list-group-item-text">
@@ -30,9 +34,23 @@
       </ul>
     </p>
   </a>
-  <a href="{% url 'membership' %}" class="list-group-item">
+  <a href="{% url 'payment' membership='regular' %}" class="list-group-item">
     <p class="list-group-item-text text-center">
       Join Now
+    </p>
+  </a>
+</div>
+
+
+<div class="col-md-12 list-group">
+  <a href="{% url 'membership' %}" class="list-group-item active">
+    <h4 class="list-group-item-heading">
+      Make a donation
+    </h4>
+  </a>
+  <a href="{% url 'payment' membership='donation' %}" class="list-group-item">
+    <p class="list-group-item-text text-center">
+      Donate now
     </p>
   </a>
 </div>

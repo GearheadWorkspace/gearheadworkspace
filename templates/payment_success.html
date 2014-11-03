@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="row">
+    <h1 class="page-header">Success!</h1>
+    <p class="lead">
+        Thanks for making a payment. We'll get in touch with you shortly.
+    </p>
+    {% if show_mailinglist %}
+    <div class="row">
+        {% include "partials/mailchimp.html" %}
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
