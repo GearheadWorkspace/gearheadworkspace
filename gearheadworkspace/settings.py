@@ -21,9 +21,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = 'eobpux29p!pct#j%o5grrb0*j$(u*@5bhnml2!f+un^+)b$+b^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = ['*']
 
@@ -120,3 +120,4 @@ PREMIUM_MEMBERSHIP = Decimal('1500.00')
 REGULAR_MEMBERSHIP = Decimal('150.00')
 
 
+ADMINS = (('Adam', 'adam.wonak@gmail..com'),)
