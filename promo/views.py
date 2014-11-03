@@ -82,8 +82,8 @@ def payment(request, membership):
     # Configure braintree
     braintree.Configuration.configure(
         braintree.Environment.Sandbox,
-        merchant_id="jw8gd3ccpk8x7sbq",
-        public_key="56wc54324vdcmcrn",
+        merchant_id=os.environ.get('BRAINTREE_MERCHANT_ID'),
+        public_key=os.environ.get('BRAINTREE_PUBLIC_KEY'),
         private_key=os.environ.get('BRAINTREE_PRIVATE_KEY')
     )
     # Get a client token
