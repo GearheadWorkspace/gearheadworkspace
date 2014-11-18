@@ -51,6 +51,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'ssl_redirect.middleware.SSLRedirectMiddleware',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -121,3 +122,5 @@ REGULAR_MEMBERSHIP = Decimal('150.00')
 
 
 ADMINS = (('Adam', 'adam.wonak@gmail..com'),)
+
+SSL_ALWAYS = True
