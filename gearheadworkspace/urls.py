@@ -8,6 +8,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
 	url(r'^$', 'promo.views.index', name='home'),
 	url(r'^about/$', 'promo.views.about', name='about'),
+	url(r'^about_test/$', 'promo.views.about_test', name='about_test'),
 	url(r'^contact/$', 'promo.views.contact', name='contact'),
 	url(r'^register/$', 'promo.views.register', name='register'),
 	url(r'^membership/$', 'promo.views.membership', name='membership'),
