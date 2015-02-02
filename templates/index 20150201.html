@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+  <div class="row jumbotron">
+    <h1>
+      <img src="{% static 'img/logo2.gif' %}" class="img-responsive" alt="Gearhead Workspace"/>
+    </h1>
+    <p/>&nbsp;&nbsp;
+    <div class="text-center">
+      <p>Do you love working on your car or motorcycle?</p>
+      <p>Do you wish you knew how?</p>
+      <p>Let Gearhead Workspace help you out!</p>
+      <p><a class="btn btn-lg btn-success" href="{% url 'membership' %}" role="button">Join today!</a></p>
+    </div>
+  </div>
+
+  <div class="row marketing">
+    <p class="lead">
+      Gearhead Workspace will offer the lifts, tools, and training you need to perform work on your own car or motorcycle. Work by yourself, alongside a mechanic, or just watch our mechanic do the work for you. We are here to provide you with the garage you have always dreamed of. Our initial location will be on Chicago's north side and we are targeting to open in the Summer of 2015. Would you like to help us open? Sign up for a Founding Membership below!
+    </p>
+  </div>
+
+    <div class="row">
+    <h4>Memberships
+    <p>
+      Want more than simply tools &amp; equipment by the hour? Check out our two membership levels which are now available as Founding Memberships. To thank our Founding Members, we are selling the founding memberships at <b>50%</b> off the regular membership price! Sign up for our <a  href="{% url 'membership' %}">email list</a> to be kept up to date on our progress.
+    </p>
+
+	</h4>
+     {% include "partials/membership_options.html" %}
+  </div>
+
+{% endblock %}

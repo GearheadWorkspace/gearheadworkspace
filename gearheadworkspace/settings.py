@@ -117,8 +117,8 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 ALLOWED_HOSTS = ['*']
 
 # Membership Cost
-PREMIUM_MEMBERSHIP = Decimal('1500.00')
-REGULAR_MEMBERSHIP = Decimal('150.00')
+PREMIUM_MEMBERSHIP = Decimal('2100.00')
+REGULAR_MEMBERSHIP = Decimal('210.00')
 
 
 ADMINS = (('Adam', 'adam.wonak@gmail..com'),)
