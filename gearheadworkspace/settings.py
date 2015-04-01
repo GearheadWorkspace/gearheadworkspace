@@ -121,6 +121,6 @@ PREMIUM_MEMBERSHIP = Decimal('2550.00')
 REGULAR_MEMBERSHIP = Decimal('255.00')
 
 
-ADMINS = (('Adam', 'adam.wonak@gmail..com'),)
+ADMINS = (('Adam', 'adam.wonak@gmail..com'),('Tim', 'TimHeyen@gmail.com'),)
 
 SSL_ALWAYS = True
