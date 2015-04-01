@@ -6,4 +6,5 @@ def membership_prices(request):
     return {
     	'PREMIUM_MEMBERSHIP': settings.PREMIUM_MEMBERSHIP,
     	'REGULAR_MEMBERSHIP': settings.REGULAR_MEMBERSHIP,
+		'MEMBERSHIP_RESERVATION': settings.MEMBERSHIP_RESERVATION,
     }
