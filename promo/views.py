@@ -37,7 +37,6 @@ def payment(request, membership):
     amount = {
         'premium': settings.PREMIUM_MEMBERSHIP,
         'regular': settings.REGULAR_MEMBERSHIP,
-		'reservation': settings.MEMBERSHIP_RESERVATION,
         'donation': request.POST.get("amount", 0)
     }
 
