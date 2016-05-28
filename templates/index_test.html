@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+  <div class="row jumbotron">
+    <h1>
+      <img src="{% static 'img/logo2.gif' %}" class="img-responsive" alt="Gearhead Workspace"/>
+    </h1>
+    <p/>&nbsp;&nbsp;
+    <div class="text-center">
+      <p>Do you love working on your car or motorcycle?</p>
+      <p>Do you wish you knew how?</p>
+      <p>Let Gearhead Workspace help you out!</p>
+      <p><a class="btn btn-lg btn-success" href="{% url 'membership' %}" role="button">Join today!</a></p>
+    </div>
+  </div>
+
+  <div class="row marketing">
+    <p class="lead">
+      Gearhead Workspace will offer the lifts, tools, and training you need to perform work on your own car or motorcycle. Work by yourself, alongside a mechanic, or just watch our mechanic do the work for you. We are here to provide you with the garage you have always dreamed of. Our initial location will be on Chicago's north side and we are targeting to open late Summer 2016. Would you like to help us open? Sign up for an early bird membership below!
+    </p>
+  </div>
+
+    <div class="row">
+    <h4>Memberships
+    <p>
+      Want more than simply tools &amp; equipment by the hour? Check out our two membership levels which are now available as Early Bird Memberships until March 31, 2016. To thank our early bird members, we are selling the early bird memberships at <b>15%</b> off the regular membership price! Sign up for our <a  href="{% url 'membership' %}">email list</a> to be kept up to date on our progress.
+    </p>
+
+	</h4>
+     {% include "partials/membership_options.html" %}
+  </div>
+
+<div class="row">
+	<h4>Prices</h4>
+  <p>
+    	<table width="800" border="1">
+  <tbody>
+    <tr>
+      <td>&nbsp;</td>
+      <td><b>Lift Bay</b></td>
+      <td><b>Flat Bay</b></td>
+      <td><b>Detail Bay</b></td>
+      <td><b>Moto Bay</b></td>
+    </tr>
+    <tr>
+      <td><b>Standard Price</b></td>
+      <td>$44</td>
+      <td>$34 </td>
+      <td>$20</td>
+      <td>$17</td>
+    </tr>
+    <tr>
+      <td><b>Regular Member</b></td>
+      <td>$35</td>
+      <td>$26</td>
+      <td>$16</td>
+      <td>$13</td>
+    </tr>
+    <tr>
+      <td><b>Premium Member</td>
+      <td>Included</td>
+      <td>Included</td>
+      <td>Included</td>
+      <td>Included</td>
+    </tr>
+  </tbody>
+</table>
+
+    </p>
+    <p>Reserve a Mechanic as a Coach for an additional $25/hour.</p>
+    <p>Store your off-season tires for $20/month or $200/year.</p>
+</div>
+
+{% endblock %}
